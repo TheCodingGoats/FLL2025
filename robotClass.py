@@ -4,7 +4,7 @@ from pybricks.tools import wait, multitask, Matrix, run_task, hub_menu
 from pybricks.pupdevices import Motor, ColorSensor, Remote
 from pybricks.robotics import DriveBase, Car
 
-<== All this should be inside the class right? :) ==>
+## All this should be inside the class (underneath the class Robot). If they are outside the class, they are not class variables and won't be created with the object
 hub = PrimeHub
 leftMotor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
 rightMotor = Motor(Port.E)
@@ -14,8 +14,8 @@ driveBase = DriveBase(leftMotor, rightMotor, wheel_diameter=56, axle_track=112)
 leftSensor = ColorSensor(Port.B)
 rightSensor = ColorSensor(Port.F)
 yawRate = driveBase.angle()
-driveBase.use_gyro(True)
-<== up till here ==>
+driveBase.use_gyro(True) # Put this line in the __init__() so it runs this function on creation of the class
+## Up till here
 
 class Robot:
     def __init__():
