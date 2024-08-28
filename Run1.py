@@ -1,8 +1,8 @@
 from robotClass import Robot
 
-Robot.frontArm(2, 1)
+robo = Robot()
 
-Robot.straight(2.4, .5)
+robo.straight(-2.5)
 
-Robot.frontArm(1, .5)
+robo.straight(2.5)
 
