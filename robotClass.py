@@ -26,7 +26,7 @@ class Robot:
         self.driveBase.straight(360 * distance, wait=Wait) 
 
     def turn(self, angle, speed=25, acceleration = 100): 
-        self.driveBase.settings(turn_rate=(speed * 360), turn_acceleration=acceleration)
+        self.driveBase.settings(turn_rate = speed, turn_acceleration=acceleration)
         self.driveBase.turn(angle)
         
     def frontArm(self, angle, speed = 100,  Wait = True):
