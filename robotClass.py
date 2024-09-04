@@ -25,21 +25,24 @@ class Robot:
         self.driveBase.settings(straight_speed=(speed * 360), straight_acceleration=acceleration) 
         self.driveBase.straight(360 * distance, wait=Wait) 
 
-    def turn(self, angle, speed=.25, acceleration = 100): 
+    def turn(self, angle, speed=25, acceleration = 100): 
         self.driveBase.settings(turn_rate=(speed * 360), turn_acceleration=acceleration)
         self.driveBase.turn(angle)
         
     def frontArm(self, angle, speed = 100,  Wait = True):
-        # rotations = angle
-        self.frontMotor.run_angle(speed, angle, wait=Wait) 
+        rotations = angle * 360
+        # if rotations < 0:
+            # self.frontMotor = Motor(Port.D, positive_direction=Direction.COUNTERCLOCKWISE, gears=None, reset_angle=True, profile=None)
+        self.frontMotor.run_angle(speed, rotations, wait=Wait) 
+        self.frontMotor = Motor(Port.D, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None)
 
-    def backArm(self, rotations, speed = .5,  Wait = True):
-        self.backMotor = Motor(Port.D, wait = Wait)
-        self.backMotor.run_angle(360 * speed)
-        wait(((((rotations * 360) / 60) / 60) / speed) * 10000)
-        self.backMotor.hold()
-        self.frontMotor = Motor(Port.D, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None, wait = True)
-        
+    def backArm(self, angle, speed = 100,  Wait = True):
+        rotations = angle * 360
+        if rotations < 0:
+            self.backMotor = Motor(Port.D, positive_direction=Direction.COUNTERCLOCKWISE, gears=None, reset_angle=True, profile=None)
+        self.backMotor.run_angle(speed, rotations, wait=Wait) 
+        self.backMotor = Motor(Port.D, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None)
+
     # def gradTurn(wheel1Speed, wheel2Speed, angle):
         # while yawRate != angle:
             # leftMotor.run(wheel1Speed, wait=False)
