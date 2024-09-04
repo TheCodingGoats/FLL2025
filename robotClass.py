@@ -21,8 +21,8 @@ class Robot:
         self.driveBase.use_gyro(True)
 
 
-    def straight(self, distance = 1, speed = .5, acceleration = 100, Wait = True):
-        self.driveBase.settings(straight_speed=(speed * 360), straight_acceleration=acceleration) 
+    def straight(self, distance = 1, speed = 50, acceleration = 100, Wait = True):
+        self.driveBase.settings(straight_speed = speed, straight_acceleration=acceleration) 
         self.driveBase.straight(360 * distance, wait=Wait) 
 
     def turn(self, angle, speed=25, acceleration = 100): 
@@ -34,7 +34,7 @@ class Robot:
         # if rotations < 0:
             # self.frontMotor = Motor(Port.D, positive_direction=Direction.COUNTERCLOCKWISE, gears=None, reset_angle=True, profile=None)
         self.frontMotor.run_angle(speed, rotations, wait=Wait) 
-        self.frontMotor = Motor(Port.D, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None)
+        # self.frontMotor = Motor(Port.D, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None)
 
     def backArm(self, angle, speed = 100,  Wait = True):
         rotations = angle * 360
