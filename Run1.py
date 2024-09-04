@@ -1,8 +1,7 @@
-from robotClass import Robot
+import robotClass
 
-robo = Robot()
+robo = robotClass.Robot()
 
-robo.straight(-2.5)
+robo.frontArm(angle = 100,  Wait = False)
 
-robo.straight(2.5)
-
+robo.straight(distance = 1, speed = .5, acceleration = 100)
