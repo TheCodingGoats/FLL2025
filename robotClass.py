@@ -38,10 +38,10 @@ class Robot:
 
     def backArm(self, angle, speed = 100,  Wait = True):
         rotations = angle * 360
-        if rotations < 0:
-            self.backMotor = Motor(Port.D, positive_direction=Direction.COUNTERCLOCKWISE, gears=None, reset_angle=True, profile=None)
+        # if rotations < 0:
+        #     self.backMotor = Motor(Port.D, positive_direction=Direction.COUNTERCLOCKWISE, gears=None, reset_angle=True, profile=None)
         self.backMotor.run_angle(speed, rotations, wait=Wait) 
-        self.backMotor = Motor(Port.D, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None)
+        #self.backMotor = Motor(Port.D, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None)
 
     # def gradTurn(wheel1Speed, wheel2Speed, angle):
         # while yawRate != angle:

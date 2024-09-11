@@ -1,15 +1,5 @@
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Color
-from pybricks.tools import wait
+import robotClass
 
-# Initialize the hub.
-hub = PrimeHub()
+robo = robotClass.Robot()
 
-# Turn the light on and off 5 times.
-for i in range(5):
-
-    hub.light.on(Color.RED)
-    wait(1000)
-
-    hub.light.off()
-    wait(500)
+robo.frontMotor.run_angle(-20, 20)
