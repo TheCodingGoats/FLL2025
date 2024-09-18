@@ -25,7 +25,7 @@ class Robot:
         self.driveBase.settings(straight_speed = speed, straight_acceleration=acceleration) 
         self.driveBase.straight(360 * distance, wait=Wait) 
 
-    def turn(self, angle, speed=25, acceleration = 100): 
+    def turn(self, angle, speed=25, acceleration = 100, wait = True): 
         self.driveBase.settings(turn_rate = speed, turn_acceleration=acceleration)
         self.driveBase.turn(angle)
         
