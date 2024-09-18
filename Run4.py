@@ -1,6 +1,20 @@
-from robotClass import Robot
-Robot.straight(1.2)   # picks up krill number one and two
-Robot.turn(72)        # turns to pick up krill number three
-Robot.straight(.1)    # picks up Krill number three
-Robot.turn(-3)        
-Robot.turn(-45)       # turns to dump krill
+import robotClass
+
+robo = robotClass.Robot()
+
+robo.straight(.07, 200)
+robo.turn(-45, 40)
+robo.straight(.65, 200)
+robo.turn(90, 40)
+robo.frontArm(-300, 100, Wait = False)
+robo.straight(.5, 200)
+
+
+# robo.frontArm(100, -300, Wait = False)
+# robo.straight(.45, 200)
+# robo.turn(-30, 80)
+# robo.straight(.38, 200)
+# robo.turn(25)
+# robo.straight(.44, 200)
+# robo.turn(44)
+# robo.straight(.15, 40, 1000)

@@ -33,7 +33,7 @@ class Robot:
         rotations = angle * 360
         # if rotations < 0:
             # self.frontMotor = Motor(Port.D, positive_direction=Direction.COUNTERCLOCKWISE, gears=None, reset_angle=True, profile=None)
-        self.frontMotor.run_angle(speed, rotations, wait=Wait) 
+        self.frontMotor.run_angle(rotations, speed, wait=Wait) 
         # self.frontMotor = Motor(Port.D, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None)
 
     def backArm(self, angle, speed = 100,  Wait = True):
@@ -41,12 +41,12 @@ class Robot:
         if rotations < 0:
             self.backMotor = Motor(Port.D, positive_direction=Direction.COUNTERCLOCKWISE, gears=None, reset_angle=True, profile=None)
         self.backMotor.run_angle(speed, rotations, wait=Wait) 
-        self.backMotor = Motor(Port.D, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None)
+        # self.backMotor = Motor(Port.D, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None)
 
     # def gradTurn(wheel1Speed, wheel2Speed, angle):
-        # while yawRate != angle:
-            # leftMotor.run(wheel1Speed, wait=False)
-            # rightMotor.run(wheel2Speed)
+    #     while yawRate != angle:
+    #         leftMotor.run(wheel1Speed, wait=False)
+    #         rightMotor.run(wheel2Speed)
     
     def leftSensor(self, type):
         if type == "reflection":
