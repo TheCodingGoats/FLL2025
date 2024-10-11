@@ -51,3 +51,6 @@ class Robot:
             return self.rightSensor.reflection()
         elif type == "color":
             return self.rightSensor.color()
+        
+    # def Wait(waitValue):
+    #     wait(waitValue * 1000)
