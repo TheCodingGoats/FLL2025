@@ -12,8 +12,8 @@ class Robot:
     frontMotor = Motor(Port.D, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None)
     backMotor = Motor(Port.C, positive_direction=Direction.COUNTERCLOCKWISE, gears=None, reset_angle=True, profile=None)
     driveBase = DriveBase(leftMotor, rightMotor, wheel_diameter=56, axle_track=112)
-    leftSensor = ColorSensor(Port.B)
-    rightSensor = ColorSensor(Port.F)
+    leftColorSensor = ColorSensor(Port.B)
+    rightColorSensor = ColorSensor(Port.F)
     yawRate = driveBase.angle()
 
     def __init__(self):
@@ -26,7 +26,7 @@ class Robot:
         self.driveBase.straight(360 * distance, wait=Wait) 
 
     def turn(self, angle, speed=25, acceleration = 100): 
-        self.driveBase.settings(turn_rate=(speed * 360), turn_acceleration=acceleration)
+        self.driveBase.settings(turn_rate = speed, turn_acceleration=acceleration)
         self.driveBase.turn(angle)
         
     def frontArm(self, angle, speed = 100,  Wait = True):
@@ -44,12 +44,12 @@ class Robot:
     
     def leftSensor(self, type):
         if type == "reflection":
-            return self.leftSensor.reflection()
+            return self.leftColorSensor.reflection()
         elif type == "color":
-            return self.leftSensor.color()
+            return self.leftColorSensor.color()
 
     def rightSensor(self, type):
         if type == "reflection":
-            return self.rightSensor.reflection()
+            return self.rightColorSensor.reflection()
         elif type == "color":
-            return self.rightSensor.color()
+            return self.rightColorSensor.color()
