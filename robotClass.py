@@ -5,7 +5,7 @@ from pybricks.pupdevices import Motor, ColorSensor, Remote
 from pybricks.robotics import DriveBase, Car
 
 class Robot:
-
+    
     hub = PrimeHub
     leftMotor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
     rightMotor = Motor(Port.E)

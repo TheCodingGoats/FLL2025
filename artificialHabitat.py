@@ -1,11 +1,19 @@
 import robotClass
+from pybricks.tools import wait
 
 robo = robotClass.Robot()
 
-robo.straight(.4, 200, 175)
-robo.turn(-105, 100, 120)
-robo.straight(.35, 200, 200)
-robo.frontArm(.3, -100)
-robo.frontArm(.9, 200)
-robo.straight(.2, 200, 200)
-robo.frontArm(1, -1000)
+# lining up with artificial habitat
+robo.straight(.235, 200)
+robo.turn(-90, 200, 100)
+robo.straight(.43, 200)
+# turning artificial habitat
+robo.frontArm(-.43, Wait = False)
+wait(300)
+robo.straight(-.1, 200)
+# flipping artificial habitat
+robo.frontArm(.7, 499)
+robo.straight(.23)
+robo.frontArm(-1, 499)
+# returning home
+robo.straight(-1, 499, 499)
