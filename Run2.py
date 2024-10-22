@@ -6,17 +6,19 @@ robo = robotClass.Robot()
 from pybricks.tools import wait
 
 
+# line up with shipwreck
 robo.straight(.13, 200, 100)
 robo.turn(63, 100)
-robo.straight(1.15, 150, 100)
+robo.straight(1.22, 150, 100)
 robo.straight(-0.05, 200, 100)
-robo.frontArm(0.5, 200) #Pick up trident down
+robo.frontArm(0.5, 200)
 robo.straight(.04, 190)
-robo.frontArm(0.3, -150) #Pick up trident up
-robo.straight(-.40, 200, 100)
+robo.frontArm(0.3, -150)
+robo.straight(-.37, 200, 100)
 robo.turn(29.19,100)
-robo.straight(.35, 150)
-robo.straight(1, 150)
+robo.straight(.37, 150)
+robo.straight(1.4, 150)
+
 
 
 
