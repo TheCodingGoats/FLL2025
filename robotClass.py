@@ -53,4 +53,4 @@ class Robot:
             return self.rightSensor.color()
         
     # def Wait(waitValue):
-    #     wait(waitValue * 1000)
+    #     wait(waitValue * 1000)a
