@@ -4,7 +4,7 @@ from pybricks.tools import wait
 
 robo = robotClass.Robot()
 robo.straight(.4, 200, 200)
-robo.frontArm(.48, -150, False)
+robo.frontArm(.46, -150, False)
 wait(500)
 robo.straight(.36, 100, 300)
 robo.frontArm(.2, 75)
