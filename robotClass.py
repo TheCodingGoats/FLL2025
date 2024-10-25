@@ -12,8 +12,8 @@ class Robot:
     frontMotor = Motor(Port.D, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None)
     backMotor = Motor(Port.C, positive_direction=Direction.COUNTERCLOCKWISE, gears=None, reset_angle=True, profile=None)
     driveBase = DriveBase(leftMotor, rightMotor, wheel_diameter=56, axle_track=112)
-    leftSensor = ColorSensor(Port.B)
-    rightSensor = ColorSensor(Port.F)
+    leftColorSensor = ColorSensor(Port.B)
+    rightColorSensor = ColorSensor(Port.F)
     yawRate = driveBase.angle()
 
     def __init__(self):
@@ -42,15 +42,15 @@ class Robot:
     
     def leftSensor(self, type):
         if type == "reflection":
-            return self.leftSensor.reflection()
+            return self.leftColorSensor.reflection()
         elif type == "color":
-            return self.leftSensor.color()
+            return self.leftColorSensor.color()
 
     def rightSensor(self, type):
         if type == "reflection":
-            return self.rightSensor.reflection()
+            return self.rightColorSensor.reflection()
         elif type == "color":
-            return self.rightSensor.color()
+            return self.rightColorSensor.color()
         
     # def Wait(waitValue):
-    #     wait(waitValue * 1000)
+    #     wait(waitValue * 1000)a
