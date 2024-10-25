@@ -5,7 +5,7 @@ from pybricks.pupdevices import Motor, ColorSensor, Remote
 from pybricks.robotics import DriveBase, Car
 
 class Robot:
-    
+
     hub = PrimeHub
     leftMotor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
     rightMotor = Motor(Port.E)
@@ -25,20 +25,22 @@ class Robot:
         self.driveBase.settings(straight_speed = speed, straight_acceleration=acceleration) 
         self.driveBase.straight(360 * distance, wait=Wait) 
 
-    def turn(self, angle, speed=25, acceleration = 100, wait = True): 
+    def turn(self, angle, speed=25, acceleration = 100): 
         self.driveBase.settings(turn_rate = speed, turn_acceleration=acceleration)
         self.driveBase.turn(angle)
         
-    def frontArm(self, rotations, speed = 100,  Wait = True):
-        self.frontMotor.run_angle(speed, (rotations * 360), wait=Wait) 
+    def frontArm(self, angle, speed = 100,  Wait = True):
+        rotations = angle * 360
+        self.frontMotor.run_angle(speed, rotations, wait=Wait) 
 
-    def backArm(self, rotations, speed = 100,  Wait = True):
-        self.backMotor.run_angle(speed, (rotations * 360), wait=Wait) 
+    def backArm(self, angle, speed = 100,  Wait = True):
+        rotations = angle * 360
+        self.backMotor.run_angle(speed, rotations, wait=Wait) 
 
     # def gradTurn(wheel1Speed, wheel2Speed, angle):
-    #     while yawRate != angle:
-    #         leftMotor.run(wheel1Speed, wait=False)
-    #         rightMotor.run(wheel2Speed)
+        # while yawRate != angle:
+            # leftMotor.run(wheel1Speed, wait=False)
+            # rightMotor.run(wheel2Speed)
     
     def leftSensor(self, type):
         if type == "reflection":
@@ -51,6 +53,3 @@ class Robot:
             return self.rightColorSensor.reflection()
         elif type == "color":
             return self.rightColorSensor.color()
-        
-    # def Wait(waitValue):
-    #     wait(waitValue * 1000)a
