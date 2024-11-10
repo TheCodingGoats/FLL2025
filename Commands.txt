@@ -1,0 +1,3 @@
+Load programs to hub:
+
+pybricksdev run ble --name "Hub Name Here" program.py
