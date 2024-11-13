@@ -18,11 +18,11 @@ def run2():
     robo.straight(.04, 190)
     robo.frontArm(.4, -150)
     robo.turn(-5, 200)
-    robo.straight(-.33, 200, 200)
-    robo.turn(39,200)
+    robo.straight(-.38, 200, 200)
+    robo.turn(36,200)
     
     # align with artificial habitat
-    robo.straight(1.225,350, 250)
+    robo.straight(1.15,350, 250)
     robo.straight(-.3,20)
     robo.straight(-.15, 15)
     robo.straight(-.2,700, 499)

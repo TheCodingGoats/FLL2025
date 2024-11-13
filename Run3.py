@@ -29,4 +29,8 @@ def run3():
     robo.turn(-15, 200, 499)
     robo.straight(-.2, 700, 499)
     robo.turn(-75, 499)
+<<<<<<< Updated upstream
     robo.straight(-1.35, 700, 499)
+=======
+    robo.straight(-1.35, 700, 499)
+>>>>>>> Stashed changes

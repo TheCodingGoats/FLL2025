@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
+=======
+# Run 4 function
+
+>>>>>>> Stashed changes
 import robotClass
 from pybricks.tools import wait
 
