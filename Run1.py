@@ -28,15 +28,15 @@ def run1():
     robo.turn(-43, 400)
 
     # activate shark
-    robo.straight(.065, 200)
+    robo.straight(.055, 200)
     robo.frontArm(1.2, 400)
     robo.frontArm(-1, 400)
-    robo.straight(-.08, 200)
+    robo.straight(-.1, 200)
 
     # push coral buds & collect scuba diver
-    robo.turn(-28.5)
+    robo.turn(-28)
     robo.frontArm(.51)
-    robo.straight(.1)
+    robo.straight(.13)
     
     wait(175)
 
@@ -47,7 +47,7 @@ def run1():
     # line up with raise the mast
     robo.straight(-.3)
     robo.turn(-50)
-    robo.straight(.28)
+    robo.straight(.26)
     robo.turn(23.7)
 
     # raising the mast
@@ -59,9 +59,9 @@ def run1():
     robo.straight(.3)
 
     # hanging scuba diver on coral reef support
-    robo.turn(113)
-    robo.straight(.255)
-    robo.frontArm(.25, 50)
+    robo.turn(118)
+    robo.straight(.285)
+    robo.frontArm(.3, 50)
     
     # flipping coral reef
     robo.turn(13)

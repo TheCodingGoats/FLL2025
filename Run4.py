@@ -1,33 +1,16 @@
-# Run 4 Function
-
 import robotClass
-from pybricks.tools import wait 
-from pybricks.pupdevices import Motor
-from pybricks.parameters import Port
-robo = robotClass.Robot()
+from pybricks.tools import wait
 
-robo.frontArm(1, 200, Wait = False)
-robo.straight(.19, 400)# Drives out of jig
-robo.turn (-27, 200) # Align itself with sonar discovery
-robo.straight (1.20, 400)
-robo.turn (18, 200) #turns to do the second whale
-robo.straight (-.25, 200) # Backs away from Sonar Discovery
-robo.frontArm(-2, Wait = False) # Lifts arm using concurrent coding
-robo.turn(133, 200) # align with send over the Submerable
-robo.backArm(-1.85, 700, Wait = False) # Lowers the back arm with concurrent coding
-robo.straight (-.85, 200) # Goes towars the Submersable
-robo.backArm (3.5, 500) # Lifts the Submersable
-wait (750)
+def run4():
+    robo = robotClass.Robot()
 
-robo.straight(.5, 200)
-robo.turn(-35, 200)
-robo.straight(-.9, 200)
-robo.straight(.38, 400)
-
-
-# robo.straight (.3, 200) # Backs away from the Submersable
-# robo.turn (-94, 200) 
-# robo.straight(-.3, 200) # Backs toward Anglerfish
-# robo.turn (63, 200) # Align with the Anglerfish
-# robo.straight (-.5, 200) # Completes Anglerfish
-# robo.straight(.45, 400)
+    robo.frontArm(0.06, -40, Wait = False)
+    robo.straight(.69, 800, 400)
+    robo.turn(40, 75, 400)
+    robo.straight(0.1, 200, 800)
+    robo.frontArm( .5, -150, Wait = False)
+    robo.turn( 10, 10)
+    wait(500)
+    robo.straight(-0.1, 800, 800)
+    robo.turn(-40, 700, 400)
+    robo.straight(-.7, 800, 700)
